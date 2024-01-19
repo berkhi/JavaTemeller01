@@ -106,8 +106,8 @@ public class _01_StringMetodlar {
         System.out.println(i);
 
         //toUpperCase
-        str1="ilk";
-        System.out.println(str1.toUpperCase());
+        str1="kış";
+        System.out.println("kış büyük:"+str1.toUpperCase());
 
         //toLowerCase
         str1="JAVA";
@@ -129,6 +129,71 @@ public class _01_StringMetodlar {
         boolean iceriyorMu = str1.contains("er");
         System.out.println(iceriyorMu);
 
+        // Türkçe alfabedeki Büyük Harflerin ASCII değerlerini yazdırınız.
+        // A -> 65
+/*
+        for (char j = 'A'; j <= 'Z'; j++) {
+            System.out.println(j+"->"+(int)j);
+        }
+*/
+        String alfabe="ABCÇDEFGHIİJKLMNOÖPRSŞTUÜVYZ";
+        for (int j = 0; j < alfabe.length(); j++) {
+            char harf = alfabe.charAt(j);
+            System.out.println(harf +"->"+(int) harf);
+        }
+
+        //startsWith ve endsWith
+        str1="Merhaba";
+        boolean mIleBasladiMi = str1.startsWith("M");
+        System.out.println(mIleBasladiMi);
+
+        boolean zIleBasladiMi = str1.startsWith("Z");
+        System.out.println(zIleBasladiMi);
+
+        boolean aIleBittiMi=str1.endsWith("a");
+        System.out.println(aIleBittiMi);
+
+        boolean eIleBittiMi=str1.endsWith("e");
+        System.out.println(eIleBittiMi);
+
+        // Escape Characters
+        System.out.print("Java 14 Grubu Ile \nString Dersleri Başladı!\n");
+        System.out.print("\tAlt Başlık\n");
+        System.out.println("\"Ankara\"");
+        System.out.println(" Ters Slash \\ ");
+
+        //String metodları chain şeklinde kullanılabilir. Sıralama önemlidir.
+        str1=" Merhaba Java ";
+        String replace = str1.trim().replace(" ", "!");
+        System.out.println(replace);
+        String replace2 = str1.replace(" ", "!").trim();
+        System.out.println(replace2);
+
+        //split
+        String mesaj="Bu dünya ne sana ne bana kalmaz!";
+        String[] sdizi = mesaj.split(" ");
+        System.out.println(sdizi.length);
+        for (int j = 0; j < sdizi.length; j++) {
+            System.out.println(sdizi[j]);
+        }
+
+        // girilen mail adresi içinde @ işareti var mı kontrolü yapalım.
+        String email="asd.gmail.com";
+        String email1="asd@gmail.com";
+
+        System.out.println( email.contains("@"));
+        System.out.println( email1.contains("@"));
+
+        for (int j = 0; j < email1.length(); j++) {
+            if(email1.charAt(j)=='@') {
+                System.out.println("Email Doğru");
+                return;
+            }
+        }
+        System.out.println("Email Yanlış");
+
+
 
     }
+
 }
